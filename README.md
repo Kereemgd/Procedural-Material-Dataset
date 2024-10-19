@@ -26,7 +26,9 @@ Effect of Optimization:
 ![floatoptız](https://github.com/user-attachments/assets/7f96c49f-e647-4265-a988-d818435491a3)
 
 3- Erasing default node values.
+
 So, if you use NodeToPython addon you'll see that it exports every value of every node, including the default ones. So, ı erased the default ones, that caused %40 loss in token count. There's a file "Useful Codes/dataset_optimizer.py" - ı know the code is unnecessarily complicated - but you can use it to optimize raw dataset for blender 4.1
+
 ![principled_bsdf](https://github.com/user-attachments/assets/9b961ebf-37d5-4960-9503-8b6ad454875c)
 
 # Model Training Process
