@@ -7,7 +7,9 @@ As you may gather from the description, this repository contains a highly optimi
 I attempted to train language models to generate procedural materials, and while the results were promising, with excellent outputs occurring at a rate of 1 in 50, I ultimately decided against further development and deployment due to the required effort. Therefore, I am releasing the dataset I used, along with some insights gained from this five-month journey. Please, if you use the dataset, let me know.
 
 # Dataset
-Raw and Optimized versions of the dataset can be found in the link below:
+Raw, optimized, and string-indexed versions of the dataset can be found in the link below:
+
+https://drive.google.com/drive/folders/1I3dyU3Kv7P9blAAAqPvPLdqst_otkoNB?usp=sharing
 
 Distribution of the file sizes:
 ![AllMaterialFileSizeDistribution](https://github.com/user-attachments/assets/a8508093-7882-4fb0-8a7d-dd90ef1bd867)
@@ -16,6 +18,14 @@ Effect of Optimization:
 ![fc238dcc-58ba-4383-9922-f8f1a0d3b47b](https://github.com/user-attachments/assets/60ed86bd-6f84-4b5f-bb73-1b179800f062)
 
 #Preprocessing Stage
+1- Erasing the Location, Dimension and unnecessary comments.
+![image](https://github.com/user-attachments/assets/62d90389-0d3b-41aa-bb8a-532cd6a544e4)
+
+2- Erasing unnecessary digits.
+0.30000001192092896 —-----> 0.300
+
+3- Erasing default node values.
+So, if you use NodeToPython addon you'll see that it exports every value of every node, including the default ones. So, ı erased the default ones, that caused %40 loss in token count. There's a file "Useful Codes/dataset_optimizer.py" - ı know the code is unnecessarily**2 complicated**2 - but you can use them to optimize raw dataset for blender 4.1
 
 # Model Training Process
 I used OpenAIs' Gpt-4o mini base model for fine-tuning.
@@ -50,4 +60,5 @@ Stone:
 ![386fe588-069a-4fe1-88ee-d6440039a34c](https://github.com/user-attachments/assets/2ddc119b-24ed-4a1f-b31b-692e908f29d0)
 Abstract:
 ![c26aed5f-c91b-45f2-844b-173db93bdac7](https://github.com/user-attachments/assets/f3682c23-8825-48b1-86b5-579484eeee61)
-
+Hologram:
+![0db01473-77c9-4df4-bc6e-422dc34c5de0](https://github.com/user-attachments/assets/1d29fd77-0ca3-4418-bebf-1ba5980e4efa)
