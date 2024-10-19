@@ -56,7 +56,7 @@ Cracked Ice:
 
 Dot:
 
-![Dot](https://git![Dot](https://github.com/user-attachments/assets/783aab29-b8ef-4f66-8f20-fcffcec75be9)
+![Dot](https://github.com/user-attachments/assets/80d45852-9852-46ba-ad5b-803668deec6d)
 
 Galaxy with Stars:
 
