@@ -1,6 +1,8 @@
 # Procedural-Material-Dataset
 Optimized Procedural Material Dataset for Blender And review of an AI based approach for generating them.
 
+![Chicken](https://github.com/user-attachments/assets/974a8843-6629-4408-8bd7-c2111fd4576f)
+
 # Overview
 As you may gather from the description, this repository contains a highly optimized version of a dataset featuring text-based representations of procedural material nodes in Blender. Thanks to [Brendan Parmer](https://github.com/BrendanParmer), the developer of the Node-To-Python addon, I successfully converted all of the materials into text. With a great deal of patience over the past five months, I was able to optimize them further.
 
