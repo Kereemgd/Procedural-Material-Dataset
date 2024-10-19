@@ -1,0 +1,140 @@
+import bpy
+mat = bpy.data.materials.new(name = "Abstract")
+mat.use_nodes = True
+def abstract_node_group():
+
+    abstract = bpy.data.node_groups.new(type = 'ShaderNodeTree', name = "Abstract")
+    
+    bsdf_socket = abstract.interface.new_socket(name = "BSDF", in_out='OUTPUT', socket_type = 'NodeSocketShader')
+    
+    mask_socket = abstract.interface.new_socket(name = "Mask", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
+    mask_socket.subtype = 'NONE'
+    mask_socket.default_value = 0.0
+    mask_socket.min_value = -3.403e+38
+    mask_socket.max_value = 3.403e+38
+    
+    color_socket = abstract.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+    
+    color_socket_1 = abstract.interface.new_socket(name = "Color 1", in_out='INPUT', socket_type = 'NodeSocketColor')
+    
+    
+    principled_bsdf = abstract.nodes.new("ShaderNodeBsdfPrincipled")
+    principled_bsdf.distribution = 'GGX'
+    principled_bsdf.subsurface_method = 'RANDOM_WALK_SKIN'
+    principled_bsdf.inputs[3].default_value = 1.450
+    principled_bsdf.inputs[6].default_value = 0.0
+    principled_bsdf.inputs[8].default_value = (1.0, 0.200, 0.100)
+    principled_bsdf.inputs[10].default_value = 1.400
+    principled_bsdf.inputs[12].default_value = 0.0
+    principled_bsdf.inputs[19].default_value = 0.030
+    
+    principled_bsdf_001 = abstract.nodes.new("ShaderNodeBsdfPrincipled")
+    principled_bsdf_001.subsurface_method = 'RANDOM_WALK_SKIN'
+    principled_bsdf_001.inputs[0].default_value = (0.600, 0.600, 0.600, 1.0)
+    principled_bsdf_001.inputs[3].default_value = 1.450
+    principled_bsdf_001.inputs[6].default_value = 0.0
+    principled_bsdf_001.inputs[8].default_value = (1.0, 0.200, 0.100)
+    principled_bsdf_001.inputs[10].default_value = 1.400
+    principled_bsdf_001.inputs[19].default_value = 0.030
+    
+    mix_shader = abstract.nodes.new("ShaderNodeMixShader")
+    mix_shader.inputs[0].default_value = 0.200
+    
+    fresnel = abstract.nodes.new("ShaderNodeFresnel")
+    fresnel.inputs[0].default_value = 1.410
+    fresnel.inputs[1].default_value = (0.0, 0.0, 0.0)
+    
+    layer_weight = abstract.nodes.new("ShaderNodeLayerWeight")
+    
+    mix = abstract.nodes.new("ShaderNodeMix")
+    mix.data_type = 'RGBA'
+    mix.inputs[0].default_value = 0.200
+    mix.inputs[1].default_value = (0.5, 0.5, 0.5)
+    mix.inputs[8].default_value = (0.0, 0.0, 0.0)
+    mix.inputs[9].default_value = (0.0, 0.0, 0.0)
+    
+    noise_texture = abstract.nodes.new("ShaderNodeTexNoise")
+    noise_texture.inputs[2].default_value = 2.0
+    noise_texture.inputs[3].default_value = 15.0
+    
+    math = abstract.nodes.new("ShaderNodeMath")
+    math.operation = 'LESS_THAN'
+    math.inputs[0].default_value = 0.540
+    
+    group_output = abstract.nodes.new("NodeGroupOutput")
+    group_output.is_active_output = True
+    
+    map_range = abstract.nodes.new("ShaderNodeMapRange")
+    map_range.inputs[2].default_value = 0.630
+    map_range.inputs[5].default_value = 4.0
+    map_range.inputs[11].default_value = (4.0, 4.0, 4.0)
+    
+    group_input = abstract.nodes.new("NodeGroupInput")
+    
+    mix_shader_001 = abstract.nodes.new("ShaderNodeMixShader")
+    mix_shader_001.inputs[0].default_value = 0.200
+    
+    mix_001 = abstract.nodes.new("ShaderNodeMix")
+    mix_001.data_type = 'RGBA'
+    mix_001.inputs[0].default_value = 0.200
+    mix_001.inputs[1].default_value = (0.5, 0.5, 0.5)
+    mix_001.inputs[8].default_value = (0.0, 0.0, 0.0)
+    mix_001.inputs[9].default_value = (0.0, 0.0, 0.0)
+    
+    voronoi_texture = abstract.nodes.new("ShaderNodeTexVoronoi")
+    voronoi_texture.distance = 'MANHATTAN'
+    voronoi_texture.inputs[2].default_value = 11.0
+    voronoi_texture.inputs[8].default_value = 0.200
+    
+    texture_coordinate = abstract.nodes.new("ShaderNodeTexCoord")
+    
+    mapping = abstract.nodes.new("ShaderNodeMapping")
+    
+    
+    
+    
+    abstract.links.new(principled_bsdf.outputs[0], mix_shader.inputs[1])
+    abstract.links.new(principled_bsdf_001.outputs[0], mix_shader.inputs[2])
+    abstract.links.new(fresnel.outputs[0], mix_shader.inputs[0])
+    abstract.links.new(layer_weight.outputs[1], math.inputs[1])
+    abstract.links.new(noise_texture.outputs[0], map_range.inputs[0])
+    abstract.links.new(mapping.outputs[0], noise_texture.inputs[0])
+    abstract.links.new(texture_coordinate.outputs[3], mapping.inputs[0])
+    abstract.links.new(map_range.outputs[0], mix.inputs[7])
+    abstract.links.new(mix.outputs[2], math.inputs[0])
+    abstract.links.new(math.outputs[0], mix_shader_001.inputs[2])
+    abstract.links.new(mix_shader.outputs[0], mix_shader_001.inputs[1])
+    abstract.links.new(group_input.outputs[0], principled_bsdf.inputs[0])
+    abstract.links.new(group_input.outputs[1], principled_bsdf_001.inputs[0])
+    abstract.links.new(group_input.outputs[1], layer_weight.inputs[0])
+    abstract.links.new(group_input.outputs[0], voronoi_texture.inputs[8])
+    abstract.links.new(group_input.outputs[0], voronoi_texture.inputs[7])
+    abstract.links.new(mix_001.outputs[2], group_output.inputs[0])
+    abstract.links.new(voronoi_texture.outputs[1], mix_001.inputs[6])
+    abstract.links.new(math.outputs[0], group_output.inputs[1])
+    return abstract
+
+abstract = abstract_node_group()
+
+def abstract_1_node_group():
+
+    abstract_1 = mat.node_tree
+    for node in abstract_1.nodes:
+        abstract_1.nodes.remove(node)
+    
+    material_output = abstract_1.nodes.new("ShaderNodeOutputMaterial")
+    material_output.inputs[3].default_value = 0.0
+    
+    abstract_2 = abstract_1.nodes.new("ShaderNodeGroup")
+    abstract_2.node_tree = abstract
+    abstract_2.inputs[0].default_value = (0.493, 0.086, 1.0, 1.0)
+    abstract_2.inputs[1].default_value = (0.275, 0.011, 0.800, 1.0)
+    
+    
+    
+    
+    abstract_1.links.new(abstract_2.outputs[0], material_output.inputs[0])
+    return abstract_1
+
+abstract_1 = abstract_1_node_group()
+

@@ -1,0 +1,172 @@
+import bpy
+mat = bpy.data.materials.new(name = Galaxy with stars)
+mat.use_nodes = True
+def galaxy_with_stars_node_group()
+
+    galaxy_with_stars = mat.node_tree
+    for node in galaxy_with_stars.nodes
+        galaxy_with_stars.nodes.remove(node)
+    
+    mapping_001 = galaxy_with_stars.nodes.new(ShaderNodeMapping)
+    mapping_001.name = Mapping.001
+    mapping_001.vector_type = 'POINT'
+    mapping_001.inputs[1].default_value = (0.0, 0.0, 0.0)
+    mapping_001.inputs[2].default_value = (0.0, 0.0, 0.0)
+    mapping_001.inputs[3].default_value = (1.0, 0.6, 0.6)
+    
+    texture_coordinate_001 = galaxy_with_stars.nodes.new(ShaderNodeTexCoord)
+    texture_coordinate_001.name = Texture Coordinate.001
+    texture_coordinate_001.from_instancer = False
+    
+    voronoi_texture = galaxy_with_stars.nodes.new(ShaderNodeTexVoronoi)
+    voronoi_texture.name = Voronoi Texture
+    voronoi_texture.distance = 'EUCLIDEAN'
+    voronoi_texture.feature = 'F1'
+    voronoi_texture.normalize = False
+    voronoi_texture.voronoi_dimensions = '3D'
+    voronoi_texture.inputs[1].default_value = 50.0
+    voronoi_texture.inputs[2].default_value = 2.0
+    voronoi_texture.inputs[3].default_value = 0.0
+    voronoi_texture.inputs[4].default_value = 0.5
+    voronoi_texture.inputs[5].default_value = 2.0
+    voronoi_texture.inputs[6].default_value = 1.0
+    voronoi_texture.inputs[7].default_value = 0.5
+    voronoi_texture.inputs[8].default_value = 1.0
+    
+    voronoi_texture_001 = galaxy_with_stars.nodes.new(ShaderNodeTexVoronoi)
+    voronoi_texture_001.name = Voronoi Texture.001
+    voronoi_texture_001.distance = 'EUCLIDEAN'
+    voronoi_texture_001.feature = 'SMOOTH_F1'
+    voronoi_texture_001.normalize = False
+    voronoi_texture_001.voronoi_dimensions = '3D'
+    voronoi_texture_001.inputs[1].default_value = 40.0
+    voronoi_texture_001.inputs[2].default_value = 0.5
+    voronoi_texture_001.inputs[3].default_value = 0.0
+    voronoi_texture_001.inputs[4].default_value = 0.5
+    voronoi_texture_001.inputs[5].default_value = 2.0
+    voronoi_texture_001.inputs[6].default_value = 1.0
+    voronoi_texture_001.inputs[7].default_value = 0.5
+    voronoi_texture_001.inputs[8].default_value = 1.0
+    
+    mapping = galaxy_with_stars.nodes.new(ShaderNodeMapping)
+    mapping.name = Mapping
+    mapping.vector_type = 'POINT'
+    mapping.inputs[1].default_value = (0.0, 0.0, 0.0)
+    mapping.inputs[2].default_value = (0.0, 0.0, 0.0)
+    mapping.inputs[3].default_value = (1.0, 1.0, 1.0)
+    
+    texture_coordinate = galaxy_with_stars.nodes.new(ShaderNodeTexCoord)
+    texture_coordinate.name = Texture Coordinate
+    texture_coordinate.from_instancer = False
+    
+    principled_bsdf = galaxy_with_stars.nodes.new(ShaderNodeBsdfPrincipled)
+    principled_bsdf.name = Principled BSDF
+    principled_bsdf.distribution = 'GGX'
+    principled_bsdf.subsurface_method = 'RANDOM_WALK_SKIN'
+    principled_bsdf.inputs[1].default_value = 0.0
+    principled_bsdf.inputs[2].default_value = 0.5
+    principled_bsdf.inputs[3].default_value = 1.450
+    principled_bsdf.inputs[4].default_value = 1.0
+    principled_bsdf.inputs[6].default_value = 0.0
+    principled_bsdf.inputs[7].default_value = 0.0
+    principled_bsdf.inputs[8].default_value = (1.0, 0.200, 0.100)
+    principled_bsdf.inputs[9].default_value = 0.050
+    principled_bsdf.inputs[10].default_value = 1.400
+    principled_bsdf.inputs[11].default_value = 0.0
+    principled_bsdf.inputs[12].default_value = 0.5
+    principled_bsdf.inputs[13].default_value = (1.0, 1.0, 1.0, 1.0)
+    principled_bsdf.inputs[14].default_value = 0.0
+    principled_bsdf.inputs[15].default_value = 0.0
+    principled_bsdf.inputs[16].default_value = (0.0, 0.0, 0.0)
+    principled_bsdf.inputs[17].default_value = 0.0
+    principled_bsdf.inputs[18].default_value = 0.0
+    principled_bsdf.inputs[19].default_value = 0.030
+    principled_bsdf.inputs[20].default_value = 1.5
+    principled_bsdf.inputs[21].default_value = (1.0, 1.0, 1.0, 1.0)
+    principled_bsdf.inputs[22].default_value = (0.0, 0.0, 0.0)
+    principled_bsdf.inputs[23].default_value = 0.0
+    principled_bsdf.inputs[24].default_value = 0.5
+    principled_bsdf.inputs[25].default_value = (1.0, 1.0, 1.0, 1.0)
+    principled_bsdf.inputs[26].default_value = (0.0, 0.0, 0.0, 1.0)
+    principled_bsdf.inputs[27].default_value = 1.0
+    
+    material_output = galaxy_with_stars.nodes.new(ShaderNodeOutputMaterial)
+    material_output.name = Material Output
+    material_output.is_active_output = True
+    material_output.target = 'ALL'
+    material_output.inputs[3].default_value = 0.0
+    
+    glow = galaxy_with_stars.nodes.new(ShaderNodeEmission)
+    glow.name = Glow
+    glow.inputs[1].default_value = 50.0
+    glow.inputs[2].default_value = 1.0
+    
+    texture_coordinate_003 = galaxy_with_stars.nodes.new(ShaderNodeTexCoord)
+    texture_coordinate_003.name = Texture Coordinate.003
+    texture_coordinate_003.from_instancer = False
+    
+    mapping_003 = galaxy_with_stars.nodes.new(ShaderNodeMapping)
+    mapping_003.name = Mapping.003
+    mapping_003.vector_type = 'POINT'
+    mapping_003.inputs[1].default_value = (0.0, 0.0, 0.0)
+    mapping_003.inputs[2].default_value = (0.0, 0.0, 0.0)
+    mapping_003.inputs[3].default_value = (1.0, 1.0, 1.0)
+    
+    noise_texture = galaxy_with_stars.nodes.new(ShaderNodeTexNoise)
+    noise_texture.name = Noise Texture
+    noise_texture.noise_dimensions = '3D'
+    noise_texture.noise_type = 'FBM'
+    noise_texture.normalize = True
+    noise_texture.inputs[1].default_value = 0.0
+    noise_texture.inputs[2].default_value = 6.0
+    noise_texture.inputs[3].default_value = 15.0
+    noise_texture.inputs[4].default_value = 0.800
+    noise_texture.inputs[5].default_value = 2.0
+    noise_texture.inputs[6].default_value = 0.0
+    noise_texture.inputs[7].default_value = 1.0
+    noise_texture.inputs[8].default_value = 0.0
+    
+    lightning_noise_texture = galaxy_with_stars.nodes.new(ShaderNodeTexNoise)
+    lightning_noise_texture.name = Lightning Noise Texture
+    lightning_noise_texture.noise_dimensions = '3D'
+    lightning_noise_texture.noise_type = 'FBM'
+    lightning_noise_texture.normalize = True
+    lightning_noise_texture.inputs[1].default_value = 101.300
+    lightning_noise_texture.inputs[2].default_value = 1.0
+    lightning_noise_texture.inputs[3].default_value = 12.0
+    lightning_noise_texture.inputs[4].default_value = 0.5
+    lightning_noise_texture.inputs[5].default_value = 2.0
+    lightning_noise_texture.inputs[6].default_value = 0.0
+    lightning_noise_texture.inputs[7].default_value = 1.0
+    lightning_noise_texture.inputs[8].default_value = 0.0
+    
+    normal_map = galaxy_with_stars.nodes.new(ShaderNodeNormalMap)
+    normal_map.name = Normal Map
+    normal_map.space = 'TANGENT'
+    normal_map.uv_map = 
+    normal_map.inputs[0].default_value = 0.700
+    
+    magic_texture = galaxy_with_stars.nodes.new(ShaderNodeTexMagic)
+    magic_texture.name = Magic Texture
+    magic_texture.turbulence_depth = 1
+    
+    
+    
+    
+    galaxy_with_stars.links.new(principled_bsdf.outputs[0], material_output.inputs[0])
+    galaxy_with_stars.links.new(mapping_001.outputs[0], voronoi_texture.inputs[0])
+    galaxy_with_stars.links.new(voronoi_texture_001.outputs[1], principled_bsdf.inputs[0])
+    galaxy_with_stars.links.new(texture_coordinate_001.outputs[0], mapping_001.inputs[0])
+    galaxy_with_stars.links.new(mapping.outputs[0], noise_texture.inputs[0])
+    galaxy_with_stars.links.new(texture_coordinate.outputs[0], mapping.inputs[0])
+    galaxy_with_stars.links.new(normal_map.outputs[0], principled_bsdf.inputs[5])
+    galaxy_with_stars.links.new(noise_texture.outputs[0], normal_map.inputs[1])
+    galaxy_with_stars.links.new(lightning_noise_texture.outputs[0], normal_map.inputs[1])
+    galaxy_with_stars.links.new(mapping_003.outputs[0], lightning_noise_texture.inputs[0])
+    galaxy_with_stars.links.new(texture_coordinate_003.outputs[0], mapping_003.inputs[0])
+    galaxy_with_stars.links.new(glow.outputs[0], material_output.inputs[2])
+    galaxy_with_stars.links.new(mapping.outputs[0], magic_texture.inputs[0])
+    galaxy_with_stars.links.new(magic_texture.outputs[0], voronoi_texture_001.inputs[0])
+    return galaxy_with_stars
+
+galaxy_with_stars = galaxy_with_stars_node_group()

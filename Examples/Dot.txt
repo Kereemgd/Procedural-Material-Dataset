@@ -1,0 +1,110 @@
+import bpy
+mat = bpy.data.materials.new(name = "Dot")
+mat.use_nodes = True
+def dot_node_group():
+
+	dot = mat.node_tree
+	for node in dot.nodes:
+		dot.nodes.remove(node)
+	
+	material_output = dot.nodes.new("ShaderNodeOutputMaterial")
+	material_output.name = "Material Output"
+	material_output.is_active_output = True
+	material_output.target = 'ALL'
+	material_output.inputs[2].default_value = (0.0, 0.0, 0.0)
+	material_output.inputs[3].default_value = 0.0
+	
+	mix = dot.nodes.new("ShaderNodeMix")
+	mix.name = "Mix"
+	mix.blend_type = 'MIX'
+	mix.clamp_factor = True
+	mix.clamp_result = False
+	mix.data_type = 'RGBA'
+	mix.factor_mode = 'UNIFORM'
+	mix.inputs[0].default_value = 0.535
+	mix.inputs[1].default_value = (0.5, 0.5, 0.5)
+	mix.inputs[2].default_value = 0.0
+	mix.inputs[3].default_value = 0.0
+	mix.inputs[4].default_value = (0.0, 0.0, 0.0)
+	mix.inputs[5].default_value = (0.0, 0.0, 0.0)
+	mix.inputs[8].default_value = (0.0, 0.0, 0.0)
+	mix.inputs[9].default_value = (0.0, 0.0, 0.0)
+	
+	wave_texture = dot.nodes.new("ShaderNodeTexWave")
+	wave_texture.name = "Wave Texture"
+	wave_texture.bands_direction = 'X'
+	wave_texture.rings_direction = 'X'
+	wave_texture.wave_profile = 'SIN'
+	wave_texture.wave_type = 'BAND'
+	wave_texture.inputs[1].default_value = 3.200
+	wave_texture.inputs[2].default_value = 24.0
+	wave_texture.inputs[3].default_value = 32.0
+	wave_texture.inputs[4].default_value = 2.0
+	wave_texture.inputs[5].default_value = 0.050
+	wave_texture.inputs[6].default_value = 0.0
+	
+	math = dot.nodes.new("ShaderNodeMath")
+	math.name = "Math"
+	math.operation = 'ADD'
+	math.use_clamp = True
+	math.inputs[2].default_value = 0.5
+	
+	color_ramp = dot.nodes.new("ShaderNodeValToRGB")
+	color_ramp.name = "Color Ramp"
+	color_ramp.color_ramp.color_mode = 'RGB'
+	color_ramp.color_ramp.hue_interpolation = 'NEAR'
+	color_ramp.color_ramp.interpolation = 'LINEAR'
+	
+	color_ramp.color_ramp.elements.remove(color_ramp.color_ramp.elements[0])
+	color_ramp_cre_0 = color_ramp.color_ramp.elements[0]
+	color_ramp_cre_0.position = 0.367
+	color_ramp_cre_0.alpha = 1.0
+	color_ramp_cre_0.color = (0.902, 0.001, 0.0, 1.0)
+
+	color_ramp_cre_1 = color_ramp.color_ramp.elements.new(0.914)
+	color_ramp_cre_1.alpha = 1.0
+	color_ramp_cre_1.color = (1.0, 0.335, 0.0, 1.0)
+
+	
+	principled_bsdf = dot.nodes.new("ShaderNodeBsdfPrincipled")
+	principled_bsdf.name = "Principled BSDF"
+	principled_bsdf.distribution = 'GGX'
+	principled_bsdf.subsurface_method = 'RANDOM_WALK_SKIN'
+	principled_bsdf.inputs[3].default_value = 1.450
+	principled_bsdf.inputs[4].default_value = 1.0
+	principled_bsdf.inputs[5].default_value = (0.0, 0.0, 0.0)
+	principled_bsdf.inputs[6].default_value = 0.0
+	principled_bsdf.inputs[7].default_value = 0.0
+	principled_bsdf.inputs[8].default_value = (1.0, 0.200, 0.100)
+	principled_bsdf.inputs[9].default_value = 0.050
+	principled_bsdf.inputs[10].default_value = 1.400
+	principled_bsdf.inputs[11].default_value = 0.0
+	principled_bsdf.inputs[12].default_value = 0.5
+	principled_bsdf.inputs[13].default_value = (1.0, 1.0, 1.0, 1.0)
+	principled_bsdf.inputs[14].default_value = 0.0
+	principled_bsdf.inputs[15].default_value = 0.0
+	principled_bsdf.inputs[16].default_value = (0.0, 0.0, 0.0)
+	principled_bsdf.inputs[17].default_value = 0.0
+	principled_bsdf.inputs[18].default_value = 0.0
+	principled_bsdf.inputs[19].default_value = 0.030
+	principled_bsdf.inputs[20].default_value = 1.5
+	principled_bsdf.inputs[21].default_value = (1.0, 1.0, 1.0, 1.0)
+	principled_bsdf.inputs[22].default_value = (0.0, 0.0, 0.0)
+	principled_bsdf.inputs[23].default_value = 0.0
+	principled_bsdf.inputs[24].default_value = 0.5
+	principled_bsdf.inputs[25].default_value = (1.0, 1.0, 1.0, 1.0)
+	principled_bsdf.inputs[26].default_value = (0.0, 0.0, 0.0, 1.0)
+	principled_bsdf.inputs[27].default_value = 1.0
+	
+	
+	
+	
+	dot.links.new(color_ramp.outputs[0], mix.inputs[6])
+	dot.links.new(wave_texture.outputs[0], color_ramp.inputs[0])
+	dot.links.new(math.outputs[0], color_ramp.inputs[1])
+	dot.links.new(mix.outputs[2], principled_bsdf.inputs[0])
+	dot.links.new(wave_texture.outputs[0], math.inputs[0])
+	return dot
+
+dot = dot_node_group()
+

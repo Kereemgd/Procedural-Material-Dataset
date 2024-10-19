@@ -1,0 +1,149 @@
+import bpy
+mat = bpy.data.materials.new(name = "Gold")
+mat.use_nodes = True
+def metal_2_node_group():
+
+	metal_2 = bpy.data.node_groups.new(type = 'ShaderNodeTree', name = "Metal_2")
+	
+	bsdf_socket = metal_2.interface.new_socket(name = "BSDF", in_out='OUTPUT', socket_type = 'NodeSocketShader')
+	bsdf_socket.attribute_domain = 'POINT'
+	
+	base_color_socket = metal_2.interface.new_socket(name = "Base Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+	base_color_socket.attribute_domain = 'POINT'
+	
+	roughness_socket = metal_2.interface.new_socket(name = "Roughness", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	roughness_socket.subtype = 'FACTOR'
+	roughness_socket.default_value = 0.155
+	roughness_socket.min_value = 0.0
+	roughness_socket.max_value = 1.0
+	roughness_socket.attribute_domain = 'POINT'
+	
+	anisotropic_socket = metal_2.interface.new_socket(name = "Anisotropic", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	anisotropic_socket.subtype = 'FACTOR'
+	anisotropic_socket.default_value = 0.1
+	anisotropic_socket.min_value = 0.0
+	anisotropic_socket.max_value = 1.0
+	anisotropic_socket.attribute_domain = 'POINT'
+	
+	anisotropic_rotation_socket = metal_2.interface.new_socket(name = "Anisotropic Rotation", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	anisotropic_rotation_socket.subtype = 'FACTOR'
+	anisotropic_rotation_socket.default_value = 0.1
+	anisotropic_rotation_socket.min_value = 0.0
+	anisotropic_rotation_socket.max_value = 1.0
+	anisotropic_rotation_socket.attribute_domain = 'POINT'
+	
+	
+	group_output = metal_2.nodes.new("NodeGroupOutput")
+	group_output.name = "Group Output"
+	group_output.is_active_output = True
+	
+	group_input = metal_2.nodes.new("NodeGroupInput")
+	group_input.name = "Group Input"
+	
+	principled_bsdf = metal_2.nodes.new("ShaderNodeBsdfPrincipled")
+	principled_bsdf.name = "Principled BSDF"
+	principled_bsdf.distribution = 'GGX'
+	principled_bsdf.subsurface_method = 'RANDOM_WALK_SKIN'
+	principled_bsdf.inputs[1].default_value = 1.0
+	principled_bsdf.inputs[3].default_value = 1.450
+	principled_bsdf.inputs[4].default_value = 1.0
+	principled_bsdf.inputs[6].default_value = 0.0
+	principled_bsdf.inputs[7].default_value = 0.0
+	principled_bsdf.inputs[8].default_value = (1.0, 0.200, 0.100)
+	principled_bsdf.inputs[9].default_value = 0.050
+	principled_bsdf.inputs[10].default_value = 1.400
+	principled_bsdf.inputs[11].default_value = 0.0
+	principled_bsdf.inputs[12].default_value = 0.5
+	principled_bsdf.inputs[14].default_value = 0.0
+	principled_bsdf.inputs[15].default_value = 0.0
+	principled_bsdf.inputs[16].default_value = (0.0, 0.0, 0.0)
+	principled_bsdf.inputs[17].default_value = 0.0
+	principled_bsdf.inputs[18].default_value = 0.0
+	principled_bsdf.inputs[19].default_value = 0.030
+	principled_bsdf.inputs[20].default_value = 1.5
+	principled_bsdf.inputs[21].default_value = (1.0, 1.0, 1.0, 1.0)
+	principled_bsdf.inputs[22].default_value = (0.0, 0.0, 0.0)
+	principled_bsdf.inputs[23].default_value = 0.0
+	principled_bsdf.inputs[24].default_value = 0.5
+	principled_bsdf.inputs[25].default_value = (1.0, 1.0, 1.0, 1.0)
+	principled_bsdf.inputs[26].default_value = (0.0, 0.0, 0.0, 1.0)
+	principled_bsdf.inputs[27].default_value = 1.0
+	
+	mix = metal_2.nodes.new("ShaderNodeMix")
+	mix.name = "Mix"
+	mix.blend_type = 'MIX'
+	mix.clamp_factor = True
+	mix.clamp_result = False
+	mix.data_type = 'RGBA'
+	mix.factor_mode = 'UNIFORM'
+	mix.inputs[0].default_value = 1.0
+	mix.inputs[1].default_value = (0.5, 0.5, 0.5)
+	mix.inputs[2].default_value = 0.0
+	mix.inputs[3].default_value = 0.0
+	mix.inputs[4].default_value = (0.0, 0.0, 0.0)
+	mix.inputs[5].default_value = (0.0, 0.0, 0.0)
+	mix.inputs[7].default_value = (1.0, 1.0, 1.0, 1.0)
+	mix.inputs[8].default_value = (0.0, 0.0, 0.0)
+	mix.inputs[9].default_value = (0.0, 0.0, 0.0)
+	
+	mix_001 = metal_2.nodes.new("ShaderNodeMix")
+	mix_001.name = "Mix.001"
+	mix_001.blend_type = 'MIX'
+	mix_001.clamp_factor = True
+	mix_001.clamp_result = False
+	mix_001.data_type = 'RGBA'
+	mix_001.factor_mode = 'UNIFORM'
+	mix_001.inputs[0].default_value = 0.5
+	mix_001.inputs[1].default_value = (0.5, 0.5, 0.5)
+	mix_001.inputs[2].default_value = 0.0
+	mix_001.inputs[3].default_value = 0.0
+	mix_001.inputs[4].default_value = (0.0, 0.0, 0.0)
+	mix_001.inputs[5].default_value = (0.0, 0.0, 0.0)
+	mix_001.inputs[6].default_value = (1.0, 1.0, 1.0, 1.0)
+	mix_001.inputs[8].default_value = (0.0, 0.0, 0.0)
+	mix_001.inputs[9].default_value = (0.0, 0.0, 0.0)
+	
+	
+	
+	
+	metal_2.links.new(principled_bsdf.outputs[0], group_output.inputs[0])
+	metal_2.links.new(group_input.outputs[0], principled_bsdf.inputs[0])
+	metal_2.links.new(group_input.outputs[1], principled_bsdf.inputs[2])
+	metal_2.links.new(group_input.outputs[2], principled_bsdf.inputs[4])
+	metal_2.links.new(group_input.outputs[3], principled_bsdf.inputs[5])
+	metal_2.links.new(group_input.outputs[0], mix.inputs[6])
+	metal_2.links.new(mix.outputs[2], mix_001.inputs[7])
+	metal_2.links.new(mix_001.outputs[2], principled_bsdf.inputs[13])
+	return metal_2
+
+metal_2 = metal_2_node_group()
+
+def gold_node_group():
+
+	gold = mat.node_tree
+	for node in gold.nodes:
+		gold.nodes.remove(node)
+	
+	material_output_001 = gold.nodes.new("ShaderNodeOutputMaterial")
+	material_output_001.name = "Material Output.001"
+	material_output_001.is_active_output = True
+	material_output_001.target = 'ALL'
+	material_output_001.inputs[2].default_value = (0.0, 0.0, 0.0)
+	material_output_001.inputs[3].default_value = 0.0
+	
+	material_variants_1 = gold.nodes.new("ShaderNodeGroup")
+	material_variants_1.label = "Material Variants"
+	material_variants_1.name = "Material Variants.1"
+	material_variants_1.node_tree = metal_2
+	material_variants_1.inputs[0].default_value = (1.0, 0.438, 0.0, 1.0)
+	material_variants_1.inputs[1].default_value = 0.155
+	material_variants_1.inputs[2].default_value = 0.0
+	material_variants_1.inputs[3].default_value = 0.0
+	
+	
+	
+	
+	gold.links.new(material_variants_1.outputs[0], material_output_001.inputs[0])
+	return gold
+
+gold = gold_node_group()

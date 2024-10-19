@@ -1,0 +1,126 @@
+import bpy
+mat = bpy.data.materials.new(name = "Stone")
+mat.use_nodes = True
+def stone_node_group():
+
+    stone = mat.node_tree
+    for node in stone.nodes:
+        stone.nodes.remove(node)
+    
+    principled_bsdf = stone.nodes.new("ShaderNodeBsdfPrincipled")
+    principled_bsdf.name = "Principled BSDF"
+    principled_bsdf.distribution = 'GGX'
+    principled_bsdf.subsurface_method = 'RANDOM_WALK_SKIN'
+    principled_bsdf.inputs[1].default_value = 0.0
+    principled_bsdf.inputs[2].default_value = 0.0
+    principled_bsdf.inputs[3].default_value = 1.450
+    principled_bsdf.inputs[4].default_value = 1.0
+    principled_bsdf.inputs[6].default_value = 0.0
+    principled_bsdf.inputs[7].default_value = 0.0
+    principled_bsdf.inputs[8].default_value = (1.0, 0.200, 0.100)
+    principled_bsdf.inputs[9].default_value = 0.050
+    principled_bsdf.inputs[10].default_value = 1.400
+    principled_bsdf.inputs[11].default_value = 0.0
+    principled_bsdf.inputs[12].default_value = 0.5
+    principled_bsdf.inputs[14].default_value = 0.0
+    principled_bsdf.inputs[15].default_value = 0.0
+    principled_bsdf.inputs[16].default_value = (0.0, 0.0, 0.0)
+    principled_bsdf.inputs[17].default_value = 0.0
+    principled_bsdf.inputs[18].default_value = 0.0
+    principled_bsdf.inputs[19].default_value = 0.030
+    principled_bsdf.inputs[20].default_value = 1.5
+    principled_bsdf.inputs[21].default_value = (1.0, 1.0, 1.0, 1.0)
+    principled_bsdf.inputs[22].default_value = (0.0, 0.0, 0.0)
+    principled_bsdf.inputs[23].default_value = 0.0
+    principled_bsdf.inputs[24].default_value = 0.5
+    principled_bsdf.inputs[25].default_value = (1.0, 1.0, 1.0, 1.0)
+    principled_bsdf.inputs[26].default_value = (0.0, 0.0, 0.0, 1.0)
+    principled_bsdf.inputs[27].default_value = 1.0
+    
+    material_output = stone.nodes.new("ShaderNodeOutputMaterial")
+    material_output.name = "Material Output"
+    material_output.is_active_output = True
+    material_output.target = 'ALL'
+    material_output.inputs[2].default_value = (0.0, 0.0, 0.0)
+    material_output.inputs[3].default_value = 0.0
+    
+    texture_001 = stone.nodes.new("ShaderNodeTexNoise")
+    texture_001.name = "Texture.001"
+    texture_001.noise_dimensions = '3D'
+    texture_001.noise_type = 'FBM'
+    texture_001.normalize = True
+    texture_001.inputs[0].default_value = (0.0, 0.0, 0.0)
+    texture_001.inputs[1].default_value = 0.0
+    texture_001.inputs[2].default_value = 3.200
+    texture_001.inputs[3].default_value = 15.0
+    texture_001.inputs[4].default_value = 0.5
+    texture_001.inputs[5].default_value = 2.0
+    texture_001.inputs[6].default_value = 0.0
+    texture_001.inputs[7].default_value = 1.0
+    texture_001.inputs[8].default_value = 0.0
+    
+    texture_002 = stone.nodes.new("ShaderNodeTexNoise")
+    texture_002.name = "Texture.002"
+    texture_002.noise_dimensions = '3D'
+    texture_002.noise_type = 'FBM'
+    texture_002.normalize = True
+    texture_002.inputs[1].default_value = 0.0
+    texture_002.inputs[2].default_value = 2.600
+    texture_002.inputs[3].default_value = 10.0
+    texture_002.inputs[4].default_value = 0.5
+    texture_002.inputs[5].default_value = 2.0
+    texture_002.inputs[6].default_value = 0.0
+    texture_002.inputs[7].default_value = 1.0
+    texture_002.inputs[8].default_value = 1.300
+    
+    mapping_002 = stone.nodes.new("ShaderNodeMapping")
+    mapping_002.name = "Mapping.002"
+    mapping_002.vector_type = 'POINT'
+    mapping_002.inputs[1].default_value = (0.0, 0.0, 0.0)
+    mapping_002.inputs[2].default_value = (0.0, 0.0, 0.0)
+    mapping_002.inputs[3].default_value = (1.0, 1.0, 1.0)
+    
+    noise_texture_001 = stone.nodes.new("ShaderNodeTexNoise")
+    noise_texture_001.name = "Noise Texture.001"
+    noise_texture_001.noise_dimensions = '3D'
+    noise_texture_001.noise_type = 'FBM'
+    noise_texture_001.normalize = True
+    noise_texture_001.inputs[0].default_value = (0.0, 0.0, 0.0)
+    noise_texture_001.inputs[1].default_value = 0.0
+    noise_texture_001.inputs[2].default_value = 4.400
+    noise_texture_001.inputs[3].default_value = 15.0
+    noise_texture_001.inputs[4].default_value = 0.5
+    noise_texture_001.inputs[5].default_value = 2.0
+    noise_texture_001.inputs[6].default_value = 0.0
+    noise_texture_001.inputs[7].default_value = 1.0
+    noise_texture_001.inputs[8].default_value = 0.0
+    
+    colorramp = stone.nodes.new("ShaderNodeValToRGB")
+    colorramp.name = "ColorRamp"
+    colorramp.color_ramp.color_mode = 'RGB'
+    colorramp.color_ramp.hue_interpolation = 'NEAR'
+    colorramp.color_ramp.interpolation = 'LINEAR'
+    
+    colorramp.color_ramp.elements.remove(colorramp.color_ramp.elements[0])
+    colorramp_cre_0 = colorramp.color_ramp.elements[0]
+    colorramp_cre_0.position = 0.309
+    colorramp_cre_0.alpha = 1.0
+    colorramp_cre_0.color = (0.161, 0.161, 0.161, 1.0)
+
+    colorramp_cre_1 = colorramp.color_ramp.elements.new(0.855)
+    colorramp_cre_1.alpha = 1.0
+    colorramp_cre_1.color = (0.0, 0.0, 0.0, 1.0)
+
+    
+    
+    
+    
+    stone.links.new(colorramp.outputs[0], principled_bsdf.inputs[0])
+    stone.links.new(mapping_002.outputs[0], texture_002.inputs[0])
+    stone.links.new(texture_002.outputs[0], texture_001.inputs[0])
+    stone.links.new(texture_001.outputs[0], colorramp.inputs[0])
+    stone.links.new(noise_texture_001.outputs[1], mapping_002.inputs[0])
+    stone.links.new(principled_bsdf.outputs[0], material_output.inputs[0])
+    return stone
+
+stone = stone_node_group()

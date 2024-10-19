@@ -1,0 +1,227 @@
+import bpy
+mat = bpy.data.materials.new(name = "Anime Water")
+mat.use_nodes = True
+def anime_water_node_group():
+
+	anime_water = bpy.data.node_groups.new(type = 'ShaderNodeTree', name = "Anime water")
+	
+	bsdf_socket = anime_water.interface.new_socket(name = "BSDF", in_out='OUTPUT', socket_type = 'NodeSocketShader')
+	
+	mask_socket = anime_water.interface.new_socket(name = "Mask", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
+	mask_socket.subtype = 'NONE'
+	mask_socket.default_value = 0.0
+	mask_socket.min_value = -3.403e+38
+	mask_socket.max_value = 3.403e+38
+	
+	normal_socket = anime_water.interface.new_socket(name = "Normal", in_out='OUTPUT', socket_type = 'NodeSocketVector')
+	normal_socket.subtype = 'NONE'
+	normal_socket.default_value = (0.0, 0.0, 0.0)
+	normal_socket.min_value = -3.403e+38
+	normal_socket.max_value = 3.403e+38
+	
+	color_socket = anime_water.interface.new_socket(name = "Color", in_out='INPUT', socket_type = 'NodeSocketColor')
+	
+	scale_socket = anime_water.interface.new_socket(name = "Scale", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	scale_socket.subtype = 'NONE'
+	scale_socket.default_value = 1.0
+	scale_socket.min_value = -10000.0
+	scale_socket.max_value = 10000.0
+	
+	time_scale_socket = anime_water.interface.new_socket(name = "Time Scale", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	time_scale_socket.subtype = 'NONE'
+	time_scale_socket.default_value = 1.0
+	time_scale_socket.min_value = -10000.0
+	time_scale_socket.max_value = 10000.0
+	
+	brightness_socket = anime_water.interface.new_socket(name = "Brightness", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	brightness_socket.subtype = 'NONE'
+	brightness_socket.default_value = 1.0
+	brightness_socket.min_value = 0.0
+	brightness_socket.max_value = 1000.0
+	
+	outer_foam_socket = anime_water.interface.new_socket(name = "Outer Foam", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	outer_foam_socket.subtype = 'FACTOR'
+	outer_foam_socket.default_value = 1.0
+	outer_foam_socket.min_value = 0.0
+	outer_foam_socket.max_value = 1.0
+	
+	inner_foam_socket = anime_water.interface.new_socket(name = "Inner Foam", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	inner_foam_socket.subtype = 'FACTOR'
+	inner_foam_socket.default_value = 1.0
+	inner_foam_socket.min_value = 0.0
+	inner_foam_socket.max_value = 1.0
+	
+	roughness_socket = anime_water.interface.new_socket(name = "Roughness", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	roughness_socket.subtype = 'FACTOR'
+	roughness_socket.default_value = 0.0
+	roughness_socket.min_value = 0.0
+	roughness_socket.max_value = 1.0
+	
+	outer_foam_strength_socket = anime_water.interface.new_socket(name = "Outer Foam Strength", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	outer_foam_strength_socket.subtype = 'FACTOR'
+	outer_foam_strength_socket.default_value = 1.0
+	outer_foam_strength_socket.min_value = 0.0
+	outer_foam_strength_socket.max_value = 1.0
+	
+	inner_foam_strength_socket = anime_water.interface.new_socket(name = "Inner Foam Strength", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	inner_foam_strength_socket.subtype = 'FACTOR'
+	inner_foam_strength_socket.default_value = 1.0
+	inner_foam_strength_socket.min_value = 0.0
+	inner_foam_strength_socket.max_value = 1.0
+	
+	bump_strength_socket = anime_water.interface.new_socket(name = "Bump Strength", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	bump_strength_socket.subtype = 'FACTOR'
+	bump_strength_socket.default_value = 0.0
+	bump_strength_socket.min_value = 0.0
+	bump_strength_socket.max_value = 1.0
+	
+	bump_distance_socket = anime_water.interface.new_socket(name = "Bump Distance", in_out='INPUT', socket_type = 'NodeSocketFloat')
+	bump_distance_socket.subtype = 'NONE'
+	bump_distance_socket.default_value = 0.100
+	bump_distance_socket.min_value = 0.0
+	bump_distance_socket.max_value = 1.0
+	
+	normal_socket_1 = anime_water.interface.new_socket(name = "Normal", in_out='INPUT', socket_type = 'NodeSocketVector')
+	normal_socket_1.subtype = 'NONE'
+	normal_socket_1.default_value = (0.0, 0.0, 0.0)
+	normal_socket_1.min_value = -1.0
+	normal_socket_1.max_value = 1.0
+	
+	
+	principled_bsdf = anime_water.nodes.new("ShaderNodeBsdfPrincipled")
+	principled_bsdf.distribution = 'GGX'
+	principled_bsdf.subsurface_method = 'RANDOM_WALK_SKIN'
+	principled_bsdf.inputs["Subsurface Radius"].default_value = (1.0, 0.200, 0.100)
+	principled_bsdf.inputs["Subsurface IOR"].default_value = 1.010
+	principled_bsdf.inputs["Transmission Weight"].default_value = 1.0
+	principled_bsdf.inputs["Coat Roughness"].default_value = 0.030
+	principled_bsdf.inputs["Emission Color"].default_value = (0.0, 0.0, 0.0, 1.0)
+	principled_bsdf.inputs["Emission Strength"].default_value = 1.0
+	
+	group_output = anime_water.nodes.new("NodeGroupOutput")
+	group_output.is_active_output = True
+	
+	colorramp = anime_water.nodes.new("ShaderNodeValToRGB")
+	colorramp.color_ramp.interpolation = 'EASE'
+	
+	colorramp.color_ramp.elements.remove(colorramp.color_ramp.elements[0])
+	colorramp_cre_0 = colorramp.color_ramp.elements[0]
+	colorramp_cre_0.position = 0.0
+	colorramp_cre_0.alpha = 1.0
+	colorramp_cre_0.color = (0.0, 0.0, 0.0, 1.0)
+
+	colorramp_cre_1 = colorramp.color_ramp.elements.new(0.486)
+	colorramp_cre_1.alpha = 1.0
+	colorramp_cre_1.color = (1.0, 1.0, 1.0, 1.0)
+
+	
+	colorramp_001 = anime_water.nodes.new("ShaderNodeValToRGB")
+	colorramp_001.color_ramp.interpolation = 'EASE'
+	
+	colorramp_001.color_ramp.elements.remove(colorramp_001.color_ramp.elements[0])
+	colorramp_001_cre_0 = colorramp_001.color_ramp.elements[0]
+	colorramp_001_cre_0.position = 0.486
+	colorramp_001_cre_0.alpha = 1.0
+	colorramp_001_cre_0.color = (0.0, 0.0, 0.0, 1.0)
+
+	colorramp_001_cre_1 = colorramp_001.color_ramp.elements.new(1.0)
+	colorramp_001_cre_1.alpha = 1.0
+	colorramp_001_cre_1.color = (1.0, 1.0, 1.0, 1.0)
+
+	
+	group_input = anime_water.nodes.new("NodeGroupInput")
+	
+	noise_texture = anime_water.nodes.new("ShaderNodeTexNoise")
+	noise_texture.inputs["Detail"].default_value = 16.0
+	noise_texture.inputs["Lacunarity"].default_value = 3.0
+	
+	mapping = anime_water.nodes.new("ShaderNodeMapping")
+	
+	texture_coordinate = anime_water.nodes.new("ShaderNodeTexCoord")
+	
+	mix = anime_water.nodes.new("ShaderNodeMix")
+	mix.data_type = 'RGBA'
+	mix.inputs[8].default_value = (0.0, 0.0, 0.0)
+	mix.inputs[9].default_value = (0.0, 0.0, 0.0)
+	
+	bump = anime_water.nodes.new("ShaderNodeBump")
+	
+	mix_001 = anime_water.nodes.new("ShaderNodeMix")
+	mix_001.data_type = 'RGBA'
+	mix_001.inputs[6].default_value = (1.0, 1.0, 1.0, 1.0)
+	mix_001.inputs[8].default_value = (0.0, 0.0, 0.0)
+	mix_001.inputs[9].default_value = (0.0, 0.0, 0.0)
+	
+	mix_002 = anime_water.nodes.new("ShaderNodeMix")
+	mix_002.data_type = 'RGBA'
+	mix_002.inputs[8].default_value = (0.0, 0.0, 0.0)
+	mix_002.inputs[9].default_value = (0.0, 0.0, 0.0)
+	
+	mix_003 = anime_water.nodes.new("ShaderNodeMix")
+	mix_003.data_type = 'RGBA'
+	mix_003.inputs[6].default_value = (1.0, 1.0, 1.0, 1.0)
+	mix_003.inputs[8].default_value = (0.0, 0.0, 0.0)
+	mix_003.inputs[9].default_value = (0.0, 0.0, 0.0)
+	
+	
+	
+	
+	anime_water.links.new(principled_bsdf.outputs["BSDF"], group_output.inputs[0])
+	anime_water.links.new(bump.outputs["Normal"], principled_bsdf.inputs["Normal"])
+	anime_water.links.new(noise_texture.outputs["Fac"], colorramp.inputs["Fac"])
+	anime_water.links.new(noise_texture.outputs["Fac"], colorramp_001.inputs["Fac"])
+	anime_water.links.new(mapping.outputs["Vector"], noise_texture.inputs["Vector"])
+	anime_water.links.new(texture_coordinate.outputs["Object"], mapping.inputs["Vector"])
+	anime_water.links.new(group_input.outputs[0], principled_bsdf.inputs["Base Color"])
+	anime_water.links.new(group_input.outputs[1], noise_texture.inputs["Scale"])
+	anime_water.links.new(group_input.outputs[2], mapping.inputs["Scale"])
+	anime_water.links.new(group_input.outputs[3], principled_bsdf.inputs["Roughness"])
+	anime_water.links.new(colorramp.outputs["Color"], mix.inputs[7])
+	anime_water.links.new(group_input.outputs[4], mix.inputs[0])
+	anime_water.links.new(colorramp_001.outputs["Color"], mix_001.inputs[7])
+	anime_water.links.new(mix.outputs[2], mix_001.inputs[0])
+	anime_water.links.new(group_input.outputs[5], mix_001.inputs[6])
+	anime_water.links.new(group_input.outputs[6], bump.inputs["Strength"])
+	anime_water.links.new(group_input.outputs[7], bump.inputs["Distance"])
+	anime_water.links.new(group_input.outputs[8], bump.inputs["Normal"])
+	anime_water.links.new(mix_001.outputs[2], mix_002.inputs[0])
+	anime_water.links.new(mix_002.outputs[2], mix_003.inputs[7])
+	anime_water.links.new(mix_003.outputs[2], principled_bsdf.inputs["Specular Tint"])
+	anime_water.links.new(group_input.outputs[0], principled_bsdf.inputs["Specular IOR Level"])
+	anime_water.links.new(group_input.outputs[3], principled_bsdf.inputs["Coat Weight"])
+	anime_water.links.new(group_input.outputs[4], principled_bsdf.inputs["Sheen Weight"])
+	anime_water.links.new(group_input.outputs[5], principled_bsdf.inputs["Sheen Roughness"])
+	anime_water.links.new(noise_texture.outputs["Fac"], group_output.inputs[1])
+	anime_water.links.new(bump.outputs["Normal"], group_output.inputs[2])
+	return anime_water
+
+anime_water = anime_water_node_group()
+
+def anime_water_1_node_group():
+
+	anime_water_1 = mat.node_tree
+	for node in anime_water_1.nodes:
+		anime_water_1.nodes.remove(node)
+	
+	material_output = anime_water_1.nodes.new("ShaderNodeOutputMaterial")
+	material_output.inputs["Thickness"].default_value = 0.0
+	
+	anime_water_2 = anime_water_1.nodes.new("ShaderNodeGroup")
+	anime_water_2.node_tree = anime_water
+	anime_water_2.inputs[0].default_value = (0.0, 0.598, 1.0, 1.0)
+	anime_water_2.inputs[1].default_value = 1.0
+	anime_water_2.inputs[2].default_value = 1.0
+	anime_water_2.inputs[3].default_value = 1.0
+	anime_water_2.inputs[4].default_value = 1.0
+	anime_water_2.inputs[5].default_value = 1.0
+	anime_water_2.inputs[6].default_value = 0.0
+	anime_water_2.inputs[7].default_value = 0.100
+	anime_water_2.inputs[8].default_value = (0.0, 0.0, 0.0)
+	
+	
+	
+	
+	anime_water_1.links.new(anime_water_2.outputs[0], material_output.inputs["Surface"])
+	return anime_water_1
+
+anime_water_1 = anime_water_1_node_group()
