@@ -52,40 +52,40 @@ Also dataset ı used was just containing materials under 10 kilobytes because of
 
 Cracked Ice:
 
-![Cracked_Ice](https://github.com/user-attachments/assets/51fbd80d-457d-4104-9178-a4f43917c7bd)
+![CrackedIce](https://github.com/user-attachments/assets/c282b5b2-25ba-4296-ba69-d371e87ac604)
 
 Dot:
 
-![Dot](https://github.com/user-attachments/assets/06bdfd02-d24d-4f82-9a0e-f21a4bcc99a0)
+![Dot](https://git![Dot](https://github.com/user-attachments/assets/783aab29-b8ef-4f66-8f20-fcffcec75be9)
 
 Galaxy with Stars:
 
-![Galaxy with stars](https://github.com/user-attachments/assets/aee10ecc-2621-49d7-ba0f-0c2f80f5b159)
+![Galaxy1](https://github.com/user-attachments/assets/6c7cb1ec-b850-4300-a424-337969e9ca24)
 
 Gold:
 
-![Gold](https://github.com/user-attachments/assets/a90517f5-b188-4ea2-a045-f2253cffa5d5)
+![Gold](https://github.com/user-attachments/assets/3628358f-4616-427d-a9a3-0dc79f11e6be)
 
 Rough Wood:
 
-![Rough_Wood](https://github.com/user-attachments/assets/8b1f92c5-8dbe-442b-9de9-4e6a2fda1766)
+![RoughWood](https://github.com/user-attachments/assets/9f991df6-8009-407a-888e-ff9cf4211047)
 
 Procedural Blood:
 
-![5a3b0004-4d13-4844-bcab-e63ed9e03147](https://github.com/user-attachments/assets/ce2e48f6-284a-4b03-9ac5-291ab4fcba9a)
+![Procedural_Blood](https://github.com/user-attachments/assets/bade204c-f409-4128-9e8a-8566fe9056d3)
 
 Stone:
 
-![386fe588-069a-4fe1-88ee-d6440039a34c](https://github.com/user-attachments/assets/2ddc119b-24ed-4a1f-b31b-692e908f29d0)
+![Stone](https://github.com/user-attachments/assets/0fef09c4-b4f1-4f9f-842c-da3cbbef76fa)
+
 
 Abstract:
 
-![c26aed5f-c91b-45f2-844b-173db93bdac7](https://github.com/user-attachments/assets/f3682c23-8825-48b1-86b5-579484eeee61)
+![Abstract](https://github.com/user-attachments/assets/4d44498c-a493-4fc7-8fa0-89d7092d07e6)
 
 Hologram:
 
-![0db01473-77c9-4df4-bc6e-422dc34c5de0](https://github.com/user-attachments/assets/1d29fd77-0ca3-4418-bebf-1ba5980e4efa)
-
+![Hologram](https://github.com/user-attachments/assets/62f636f1-5d5d-4d85-aa7e-22ce47ecacf8)
 
 # Future Work
 - to be written
