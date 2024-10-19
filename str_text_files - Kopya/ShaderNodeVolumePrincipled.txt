@@ -1,0 +1,20 @@
+input_output_map = {
+    'inputs': {
+        0: "Color",
+        1: "Color Attribute",
+        2: "Density",
+        3: "Density Attribute",
+        4: "Anisotropy",
+        5: "Absorption Color",
+        6: "Emission Strength",
+        7: "Emission Color",
+        8: "Blackbody Intensity",
+        9: "Blackbody Tint",
+        10: "Temperature",
+        11: "Temperature Attribute",
+        12: "Weight",
+    },
+    'outputs': {
+        0: "Volume",
+    }
+}

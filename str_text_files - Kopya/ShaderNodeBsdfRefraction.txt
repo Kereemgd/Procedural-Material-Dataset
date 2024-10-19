@@ -1,0 +1,12 @@
+input_output_map = {
+    'inputs': {
+        0: "Color",
+        1: "Roughness",
+        2: "IOR",
+        3: "Normal",
+        4: "Weight",
+    },
+    'outputs': {
+        0: "BSDF",
+    }
+}

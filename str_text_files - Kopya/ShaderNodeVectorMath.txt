@@ -1,0 +1,12 @@
+input_output_map = {
+    'inputs': {
+        0: "Vector",
+        1: "Vector_001",
+        2: "Vector_002",
+        3: "Scale",
+    },
+    'outputs': {
+        0: "Vector",
+        1: "Value",
+    }
+}

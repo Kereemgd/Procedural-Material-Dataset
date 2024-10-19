@@ -1,0 +1,11 @@
+input_output_map = {
+    'inputs': {
+        0: "Vector",
+        1: "Scale",
+        2: "Distortion",
+    },
+    'outputs': {
+        0: "Color",
+        1: "Fac",
+    }
+}

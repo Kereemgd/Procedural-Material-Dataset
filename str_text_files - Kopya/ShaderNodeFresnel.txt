@@ -1,0 +1,9 @@
+input_output_map = {
+    'inputs': {
+        0: "IOR",
+        1: "Normal",
+    },
+    'outputs': {
+        0: "Fac",
+    }
+}

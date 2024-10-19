@@ -1,0 +1,12 @@
+input_output_map = {
+    'inputs': {
+    },
+    'outputs': {
+        0: "Location",
+        1: "Color",
+        2: "Alpha",
+        3: "Object Index",
+        4: "Material Index",
+        5: "Random",
+    }
+}

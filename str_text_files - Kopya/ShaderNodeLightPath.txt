@@ -1,0 +1,19 @@
+input_output_map = {
+    'inputs': {
+    },
+    'outputs': {
+        0: "Is Camera Ray",
+        1: "Is Shadow Ray",
+        2: "Is Diffuse Ray",
+        3: "Is Glossy Ray",
+        4: "Is Singular Ray",
+        5: "Is Reflection Ray",
+        6: "Is Transmission Ray",
+        7: "Ray Length",
+        8: "Ray Depth",
+        9: "Diffuse Depth",
+        10: "Glossy Depth",
+        11: "Transparent Depth",
+        12: "Transmission Depth",
+    }
+}

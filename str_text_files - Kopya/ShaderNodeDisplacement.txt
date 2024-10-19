@@ -1,0 +1,11 @@
+input_output_map = {
+    'inputs': {
+        0: "Height",
+        1: "Midlevel",
+        2: "Scale",
+        3: "Normal",
+    },
+    'outputs': {
+        0: "Displacement",
+    }
+}

@@ -1,0 +1,20 @@
+input_output_map = {
+    'inputs': {
+        0: "Vector",
+        1: "W",
+        2: "Scale",
+        3: "Detail",
+        4: "Roughness",
+        5: "Lacunarity",
+        6: "Smoothness",
+        7: "Exponent",
+        8: "Randomness",
+    },
+    'outputs': {
+        0: "Distance",
+        1: "Color",
+        2: "Position",
+        3: "W",
+        4: "Radius",
+    }
+}

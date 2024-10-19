@@ -1,0 +1,20 @@
+input_output_map = {
+    'inputs': {
+        0: "Value",
+        1: "From Min",
+        2: "From Max",
+        3: "To Min",
+        4: "To Max",
+        5: "Steps",
+        6: "Vector",
+        7: "From_Min_FLOAT3",
+        8: "From_Max_FLOAT3",
+        9: "To_Min_FLOAT3",
+        10: "To_Max_FLOAT3",
+        11: "Steps_FLOAT3",
+    },
+    'outputs': {
+        0: "Result",
+        1: "Vector",
+    }
+}

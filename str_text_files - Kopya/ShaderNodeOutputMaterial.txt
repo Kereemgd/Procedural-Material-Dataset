@@ -1,0 +1,10 @@
+input_output_map = {
+    'inputs': {
+        0: "Surface",
+        1: "Volume",
+        2: "Displacement",
+        3: "Thickness",
+    },
+    'outputs': {
+    }
+}

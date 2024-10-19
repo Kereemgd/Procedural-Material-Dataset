@@ -1,0 +1,15 @@
+input_output_map = {
+    'inputs': {
+        0: "Vector",
+        1: "Scale",
+        2: "Distortion",
+        3: "Detail",
+        4: "Detail Scale",
+        5: "Detail Roughness",
+        6: "Phase Offset",
+    },
+    'outputs': {
+        0: "Color",
+        1: "Fac",
+    }
+}

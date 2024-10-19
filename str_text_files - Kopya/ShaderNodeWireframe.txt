@@ -1,0 +1,8 @@
+input_output_map = {
+    'inputs': {
+        0: "Size",
+    },
+    'outputs': {
+        0: "Fac",
+    }
+}

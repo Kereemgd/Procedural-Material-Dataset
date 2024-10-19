@@ -1,0 +1,11 @@
+input_output_map = {
+    'inputs': {
+        0: "Color",
+        1: "Density",
+        2: "Anisotropy",
+        3: "Weight",
+    },
+    'outputs': {
+        0: "Volume",
+    }
+}

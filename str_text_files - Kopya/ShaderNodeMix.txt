@@ -1,0 +1,20 @@
+input_output_map = {
+    'inputs': {
+        0: "Factor_Float",
+        1: "Factor_Vector",
+        2: "A_Float",
+        3: "B_Float",
+        4: "A_Vector",
+        5: "B_Vector",
+        6: "A_Color",
+        7: "B_Color",
+        8: "A_Rotation",
+        9: "B_Rotation",
+    },
+    'outputs': {
+        0: "Result_Float",
+        1: "Result_Vector",
+        2: "Result_Color",
+        3: "Result_Rotation",
+    }
+}

@@ -1,0 +1,10 @@
+input_output_map = {
+    'inputs': {
+        0: "Blend",
+        1: "Normal",
+    },
+    'outputs': {
+        0: "Fresnel",
+        1: "Facing",
+    }
+}

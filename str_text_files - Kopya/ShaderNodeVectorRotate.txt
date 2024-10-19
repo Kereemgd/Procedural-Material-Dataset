@@ -1,0 +1,12 @@
+input_output_map = {
+    'inputs': {
+        0: "Vector",
+        1: "Center",
+        2: "Axis",
+        3: "Angle",
+        4: "Rotation",
+    },
+    'outputs': {
+        0: "Vector",
+    }
+}

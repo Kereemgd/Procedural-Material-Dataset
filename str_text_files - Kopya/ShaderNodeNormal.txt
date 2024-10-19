@@ -1,0 +1,9 @@
+input_output_map = {
+    'inputs': {
+        0: "Normal",
+    },
+    'outputs': {
+        0: "Normal",
+        1: "Dot",
+    }
+}

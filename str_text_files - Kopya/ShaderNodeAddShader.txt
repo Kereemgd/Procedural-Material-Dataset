@@ -1,0 +1,9 @@
+{
+    "inputs": {
+        "0": "Shader",
+        "1": "Shader_001"
+    },
+    "outputs": {
+        "0": "Shader"
+    }
+}

@@ -1,0 +1,13 @@
+input_output_map = {
+    'inputs': {
+    },
+    'outputs': {
+        0: "Generated",
+        1: "Normal",
+        2: "UV",
+        3: "Object",
+        4: "Camera",
+        5: "Window",
+        6: "Reflection",
+    }
+}

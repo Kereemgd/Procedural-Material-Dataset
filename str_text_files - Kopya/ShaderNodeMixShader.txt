@@ -1,0 +1,10 @@
+input_output_map = {
+    'inputs': {
+        0: "Fac",
+        1: "Shader",
+        2: "Shader_001",
+    },
+    'outputs': {
+        0: "Shader",
+    }
+}

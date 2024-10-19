@@ -1,0 +1,15 @@
+input_output_map = {
+    'inputs': {
+    },
+    'outputs': {
+        0: "Position",
+        1: "Normal",
+        2: "Tangent",
+        3: "True Normal",
+        4: "Incoming",
+        5: "Parametric",
+        6: "Backfacing",
+        7: "Pointiness",
+        8: "Random Per Island",
+    }
+}

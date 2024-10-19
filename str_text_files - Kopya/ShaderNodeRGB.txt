@@ -1,0 +1,7 @@
+input_output_map = {
+    'inputs': {
+    },
+    'outputs': {
+        0: "Color",
+    }
+}
