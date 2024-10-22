@@ -1,4 +1,4 @@
-![execute](https://github.com/user-attachments/assets/1dd6859e-36a3-4601-81a8-d42ce2695fbd)# Procedural Material Dataset
+# Procedural Material Dataset
 Optimized Procedural Material Dataset for Blender And review of an AI based approach for generating them.
 
 ![Chicken](https://github.com/user-attachments/assets/974a8843-6629-4408-8bd7-c2111fd4576f)
@@ -39,26 +39,35 @@ Effect of Optimization:
 
 3- Erasing default node values.
 
-#Displaying Text Files
-
-First, select the text file you want to display and copy the text init:
-![select_copy_opt](https://github.com/user-attachments/assets/5d94a829-02d3-43a3-8ce7-5dfaee6a62d3)
-
-Then, head over the Blender "Scripting" layout and paste the text:
-![paste_exec_1](https://github.com/user-attachments/assets/45010dbe-321e-4a87-863e-55520e8f162f)
-
-After that, execute the code and head over the "Shading" layout:
-![execute](https://github.com/user-attachments/assets/e8d6663a-9ed4-469c-bfa5-d5b17dccbbd9)
-
-Select the material:
-![select_mat_opt](https://github.com/user-attachments/assets/16db4a96-42f3-4333-8e2c-1eb481a0cf73)
-
-Enjoy :)
-![enjoy2](https://github.com/user-attachments/assets/1c53b9c0-ff07-44e9-be89-8a2cb2900779)
-
 So, if you use NodeToPython addon you'll see that it exports every value of every node, including the default ones. So, ı erased the default ones, that caused %40 loss in token count. There's a file "Useful Codes/dataset_optimizer.py" - ı know the code is unnecessarily complicated - but you can use it to optimize raw dataset for blender 4.1
 
 ![principled_bsdf](https://github.com/user-attachments/assets/9b961ebf-37d5-4960-9503-8b6ad454875c)
+
+# Displaying Text Files
+
+First, select the text file you want to display and copy the text init:
+
+![select_copy_opt](https://github.com/user-attachments/assets/5d94a829-02d3-43a3-8ce7-5dfaee6a62d3)
+
+
+Then, head over the Blender "Scripting" layout and paste the text:
+
+![paste_exec_1](https://github.com/user-attachments/assets/45010dbe-321e-4a87-863e-55520e8f162f)
+
+
+After that, execute the code and head over the "Shading" layout:
+
+![execute](https://github.com/user-attachments/assets/e8d6663a-9ed4-469c-bfa5-d5b17dccbbd9)
+
+
+Select the material:
+
+![select_mat_opt](https://github.com/user-attachments/assets/16db4a96-42f3-4333-8e2c-1eb481a0cf73)
+
+
+Enjoy :)
+
+![enjoy2](https://github.com/user-attachments/assets/1c53b9c0-ff07-44e9-be89-8a2cb2900779)
 
 # Model Training Process
 I used OpenAIs' Gpt-4o mini base model for fine-tuning.
