@@ -3,7 +3,7 @@ Optimized Procedural Material Dataset for Blender And review of an AI based appr
 
 ![Chicken](https://github.com/user-attachments/assets/974a8843-6629-4408-8bd7-c2111fd4576f)
 # What's Blender ?
-Blender is a powerful 3D creation suite that is open-source and free to use. It is used for a wide range of tasks in 3D graphics
+Blender is a powerful 3D software that is open-source and free to use. It is used for a wide range of tasks in 3D graphics
 ![Logo_Blender svg](https://github.com/user-attachments/assets/4cb345e1-596b-4545-ab85-a8a39c8d1b9a)
 
 # Blender Material Nodes
