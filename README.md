@@ -29,7 +29,7 @@ Distribution of the file sizes:
 Effect of Optimization:
 ![fc238dcc-58ba-4383-9922-f8f1a0d3b47b](https://github.com/user-attachments/assets/60ed86bd-6f84-4b5f-bb73-1b179800f062)
 
-#Preprocessing Stage
+# Preprocessing Stage
 1- Erasing the Location, Dimension and unnecessary comments.
 ![image](https://github.com/user-attachments/assets/62d90389-0d3b-41aa-bb8a-532cd6a544e4)
 
