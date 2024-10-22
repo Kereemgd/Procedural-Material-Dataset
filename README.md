@@ -1,7 +1,15 @@
-# Procedural-Material-Dataset
+# Procedural Material Dataset
 Optimized Procedural Material Dataset for Blender And review of an AI based approach for generating them.
 
 ![Chicken](https://github.com/user-attachments/assets/974a8843-6629-4408-8bd7-c2111fd4576f)
+# What's Blender ?
+Blender is a powerful 3D creation suite that is open-source and free to use. It is used for a wide range of tasks in 3D graphics
+![Logo_Blender svg](https://github.com/user-attachments/assets/4cb345e1-596b-4545-ab85-a8a39c8d1b9a)
+
+# Blender Material Nodes
+Blender's Material Nodes are incredible, they allow users to create and edit materials, textures, and effects using a node-based system. In this system, various nodes are connected together to define how a material or surface behaves with respect to light, reflection, color, transparency, and other physical properties.
+![editors_texture-node_introduction_types-combined](https://github.com/user-attachments/assets/792b2519-c40b-402c-8bc6-dd1a65eeef6c)
+
 
 # Overview
 As you may gather from the description, this repository contains a highly optimized version of a dataset featuring text-based representations of procedural material nodes in Blender. Thanks to [Brendan Parmer](https://github.com/BrendanParmer), the developer of the Node-To-Python addon, I successfully converted all of the materials into text. With a great deal of patience over the past five months, I was able to optimize them further. There are more than 2.000 materials in the folder.
