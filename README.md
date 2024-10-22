@@ -14,6 +14,8 @@ Blender's Material Nodes are incredible, they allow users to create and edit mat
 # Overview
 As you may gather from the description, this repository contains a highly optimized version of a dataset featuring text-based representations of procedural material nodes in Blender. Thanks to [Brendan Parmer](https://github.com/BrendanParmer), the developer of the Node-To-Python addon, I successfully converted all of the materials into text. With a great deal of patience over the past five months, I was able to optimize them further. There are more than 2.000 materials in the folder.
 
+![ezgif-3-134510a15e](https://github.com/user-attachments/assets/182f7032-9e25-4e1f-896f-31dc50f10bfd)
+
 I attempted to train language models to generate procedural materials, and while the results were promising, with excellent outputs occurring at a rate of 1 in 50, I ultimately decided against further development and deployment due to the required effort. Therefore, I am releasing the dataset I used, along with some insights gained from this five-month journey. Please, if you use the dataset, let me know.
 
 # Dataset
@@ -36,6 +38,8 @@ Effect of Optimization:
 ![floatoptız](https://github.com/user-attachments/assets/7f96c49f-e647-4265-a988-d818435491a3)
 
 3- Erasing default node values.
+
+#Displaying Text Files
 
 So, if you use NodeToPython addon you'll see that it exports every value of every node, including the default ones. So, ı erased the default ones, that caused %40 loss in token count. There's a file "Useful Codes/dataset_optimizer.py" - ı know the code is unnecessarily complicated - but you can use it to optimize raw dataset for blender 4.1
 
