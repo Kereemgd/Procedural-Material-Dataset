@@ -73,6 +73,8 @@ Enjoy :)
 I used OpenAIs' Gpt-4o mini base model for fine-tuning.
 ![c0b696c7-3741-43ff-baf6-64b30f5f25ea](https://github.com/user-attachments/assets/1be27a4b-0838-4c87-adb4-fb7f6b09c09d)
 
+![train_diagram](https://github.com/user-attachments/assets/66444097-3c67-48ca-b2e9-adcf43f04727)
+
 Some helpful notes:
 
 -Hyperparameters
