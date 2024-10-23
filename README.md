@@ -69,13 +69,11 @@ Enjoy :)
 
 ![enjoy2](https://github.com/user-attachments/assets/1c53b9c0-ff07-44e9-be89-8a2cb2900779)
 
-# Model Training Process
+## Model Training Process
 I used OpenAIs' Gpt-4o mini base model for fine-tuning.
 ![train_diagram](https://github.com/user-attachments/assets/66444097-3c67-48ca-b2e9-adcf43f04727)
 
 ![c0b696c7-3741-43ff-baf6-64b30f5f25ea](https://github.com/user-attachments/assets/1be27a4b-0838-4c87-adb4-fb7f6b09c09d)
-
-Some helpful notes:
 
 -Hyperparameters
 Batch Size : 2
