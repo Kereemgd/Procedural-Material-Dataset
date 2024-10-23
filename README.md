@@ -76,6 +76,7 @@ The dataset I used consists of 995 materials, each under 10KB in size, with a ma
 ![train_diagram](https://github.com/user-attachments/assets/66444097-3c67-48ca-b2e9-adcf43f04727)
 
 -Hyperparameters
+
 Batch Size : 2
 Epoch : 4
 Lr Multiplier : 1-e4
