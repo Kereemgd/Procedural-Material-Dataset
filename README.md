@@ -82,11 +82,11 @@ The dataset I used consists of 995 materials, each under 10KB in size, with a ma
 
 ![train_diagram](https://github.com/user-attachments/assets/66444097-3c67-48ca-b2e9-adcf43f04727)
 
--Hyperparameters
-
-- Batch Size : 2
-- Epochs : 4
-- Lr Multiplier : 1-e4
+| Hyperparameter       | Value   |
+|---------------------|---------|
+| **Batch Size**      | 2       |
+| **Epochs**          | 4       |
+| **Lr Multiplier**   | 1e-4    |
 
 ![c0b696c7-3741-43ff-baf6-64b30f5f25ea](https://github.com/user-attachments/assets/1be27a4b-0838-4c87-adb4-fb7f6b09c09d)
 
