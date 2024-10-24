@@ -26,12 +26,12 @@ Raw, optimized, and string-indexed versions of the dataset can be found in the l
 https://drive.google.com/drive/folders/1I3dyU3Kv7P9blAAAqPvPLdqst_otkoNB?usp=sharing
 
 ### Distribution of the File Sizes:
-![AllMaterialFileSizeDistribution](https://github.com/user-attachments/assets/a8508093-7882-4fb0-8a7d-dd90ef1bd867)
+<img src="https://github.com/user-attachments/assets/a8508093-7882-4fb0-8a7d-dd90ef1bd867" alt="AllMaterialFileSizeDistribution" width="400"/>
 
 ---
 
-## Effect of Optimization:
-![fc238dcc-58ba-4383-9922-f8f1a0d3b47b](https://github.com/user-attachments/assets/60ed86bd-6f84-4b5f-bb73-1b179800f062)
+### Effect of Optimization:
+<img src="https://github.com/user-attachments/assets/60ed86bd-6f84-4b5f-bb73-1b179800f062" alt="Effect of Optimization" width="400"/>
 
 # Preprocessing Stage
 1- Erasing the Location, Dimension and unnecessary comments.
