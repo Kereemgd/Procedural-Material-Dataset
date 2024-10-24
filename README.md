@@ -53,15 +53,15 @@ So, if you use NodeToPython addon you'll see that it exports every value of ever
 
 ## Steps to Display Materials
 
-| <img src="https://github.com/user-attachments/assets/5d94a829-02d3-43a3-8ce7-5dfaee6a62d3" alt="Select and Copy" width="300"/> | <img src="https://github.com/user-attachments/assets/45010dbe-321e-4a87-863e-55520e8f162f" alt="Paste in Blender" width="300"/> |
+| <img src="https://github.com/user-attachments/assets/5d94a829-02d3-43a3-8ce7-5dfaee6a62d3" alt="Select and Copy" width="300"/> | <img src="https://github.com/user-attachments/assets/45010dbe-321e-4a87-863e-55520e8f162f" alt="Paste in Blender" width="500"/> |
 |:------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|
 | **1. Select the text file of the material you want to display and copy the text.** | **2. Head over to the Blender "Scripting" layout and paste the text.** |
 
-| <img src="https://github.com/user-attachments/assets/e8d6663a-9ed4-469c-bfa5-d5b17dccbbd9" alt="Execute the Code" width="300"/> | <img src="https://github.com/user-attachments/assets/16db4a96-42f3-4333-8e2c-1eb481a0cf73" alt="Select Material" width="300"/> |
+| <img src="https://github.com/user-attachments/assets/e8d6663a-9ed4-469c-bfa5-d5b17dccbbd9" alt="Execute the Code" width="500"/> | <img src="https://github.com/user-attachments/assets/16db4a96-42f3-4333-8e2c-1eb481a0cf73" alt="Select Material" width="500"/> |
 |:-------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|
 | **3. After that, execute the code and head over to the "Shading" layout.** | **4. Select the material.** |
 
-| <img src="https://github.com/user-attachments/assets/1c53b9c0-ff07-44e9-be89-8a2cb2900779" alt="Enjoy" width="300"/> |
+| <img src="https://github.com/user-attachments/assets/1c53b9c0-ff07-44e9-be89-8a2cb2900779" alt="Enjoy" width="500"/> |
 |:------------------------------------------------------------------------------------------------------------------------:|
 | **Enjoy!** |
 
