@@ -73,6 +73,7 @@ Enjoy :)
 I preferred to use LLMs to process my data due to their efficiency in handling '.txt' files and robust debugging capabilities. To avoid training a large-scale transformer model from scratch, I leveraged pretrained weights. Specifically, I fine-tuned OpenAI's GPT-4o mini base model, which offers fast inference and relatively low costs.
 
 The dataset I used consists of 995 materials, each under 10KB in size, with a maximum token length of 3,500
+
 ![train_diagram](https://github.com/user-attachments/assets/66444097-3c67-48ca-b2e9-adcf43f04727)
 
 -Hyperparameters
