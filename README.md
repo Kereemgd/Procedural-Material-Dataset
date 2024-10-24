@@ -32,7 +32,7 @@ https://drive.google.com/drive/folders/1I3dyU3Kv7P9blAAAqPvPLdqst_otkoNB?usp=sha
 
 <h3 align="center">Effect of Optimization:</h3>
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/60ed86bd-6f84-4b5f-bb73-1b179800f062" alt="Effect of Optimization" width="800"/>
+    <img src="https://github.com/user-attachments/assets/89693a63-509f-44db-94b2-388eea3771e4" alt="Effect of Optimization" width="800"/>
 </div>
 
 # Preprocessing Stage
