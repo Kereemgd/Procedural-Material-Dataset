@@ -29,7 +29,6 @@ https://drive.google.com/drive/folders/1I3dyU3Kv7P9blAAAqPvPLdqst_otkoNB?usp=sha
 <div align="center">
     <img src="https://github.com/user-attachments/assets/a8508093-7882-4fb0-8a7d-dd90ef1bd867" alt="AllMaterialFileSizeDistribution" width="800"/>
 </div>
----
 
 ### Effect of Optimization:
 <div align="center">
