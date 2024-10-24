@@ -51,9 +51,7 @@ So, if you use NodeToPython addon you'll see that it exports every value of ever
 
 # Displaying Materials
 
-## Steps to Display Materials
-
-| <img src="https://github.com/user-attachments/assets/5d94a829-02d3-43a3-8ce7-5dfaee6a62d3" alt="Select and Copy" width="300"/> | <img src="https://github.com/user-attachments/assets/45010dbe-321e-4a87-863e-55520e8f162f" alt="Paste in Blender" width="500"/> |
+| <img src="https://github.com/user-attachments/assets/5d94a829-02d3-43a3-8ce7-5dfaee6a62d3" alt="Select and Copy" width="500"/> | <img src="https://github.com/user-attachments/assets/45010dbe-321e-4a87-863e-55520e8f162f" alt="Paste in Blender" width="500"/> |
 |:------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|
 | **1. Select the text file of the material you want to display and copy the text.** | **2. Head over to the Blender "Scripting" layout and paste the text.** |
 
