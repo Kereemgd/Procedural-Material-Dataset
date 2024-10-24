@@ -1,10 +1,11 @@
 # Procedural Material Dataset
 Optimized Procedural Material Dataset for Blender And review of an AI based approach for generating them.
 
-![Chicken](https://github.com/user-attachments/assets/974a8843-6629-4408-8bd7-c2111fd4576f)
+<img src="https://github.com/user-attachments/assets/974a8843-6629-4408-8bd7-c2111fd4576f" alt="Chicken" width="300"/>
+
 # What's Blender ?
 Blender is a powerful 3D software that is open-source and free to use. It is used for a wide range of tasks in 3D graphics
-<img src="https://github.com/user-attachments/assets/974a8843-6629-4408-8bd7-c2111fd4576f" alt="Chicken" width="300"/>
+
 # Blender Material Nodes
 Blender's Material Nodes are incredible, they allow users to create and edit materials, textures, and effects using a node-based system. In this system, various nodes are connected together to define how a material or surface behaves with respect to light, reflection, color, transparency, and other physical properties.
 ![editors_texture-node_introduction_types-combined](https://github.com/user-attachments/assets/792b2519-c40b-402c-8bc6-dd1a65eeef6c)
