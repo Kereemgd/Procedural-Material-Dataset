@@ -49,9 +49,9 @@ So, if you use NodeToPython addon you'll see that it exports every value of ever
 
 ![principled_bsdf](https://github.com/user-attachments/assets/9b961ebf-37d5-4960-9503-8b6ad454875c)
 
-# Displaying Text Files
+# Displaying Materials
 
-First, select the text file you want to display and copy the text init:
+First, select the text file of the material you want to display and copy the text init:
 
 ![select_copy_opt](https://github.com/user-attachments/assets/5d94a829-02d3-43a3-8ce7-5dfaee6a62d3)
 
