@@ -25,10 +25,12 @@ Raw, optimized, and string-indexed versions of the dataset can be found in the l
 
 https://drive.google.com/drive/folders/1I3dyU3Kv7P9blAAAqPvPLdqst_otkoNB?usp=sharing
 
-Distribution of the file sizes:
+## Distribution of the File Sizes:
 ![AllMaterialFileSizeDistribution](https://github.com/user-attachments/assets/a8508093-7882-4fb0-8a7d-dd90ef1bd867)
 
-Effect of Optimization:
+---
+
+## Effect of Optimization:
 ![fc238dcc-58ba-4383-9922-f8f1a0d3b47b](https://github.com/user-attachments/assets/60ed86bd-6f84-4b5f-bb73-1b179800f062)
 
 # Preprocessing Stage
