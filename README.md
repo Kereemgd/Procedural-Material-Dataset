@@ -59,7 +59,7 @@ So, if you use NodeToPython addon you'll see that it exports every value of ever
 |:-------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|
 | **3. After that, execute the code and head over to the "Shading" layout.** | **4. Select the material.** |
 
-| <img src="https://github.com/user-attachments/assets/1c53b9c0-ff07-44e9-be89-8a2cb2900779" alt="Enjoy" width="500"/> |
+| <img src="https://github.com/user-attachments/assets/1c53b9c0-ff07-44e9-be89-8a2cb2900779" alt="Enjoy" width="1000"/> |
 |:------------------------------------------------------------------------------------------------------------------------:|
 | **Enjoy!** |
 
