@@ -25,7 +25,7 @@ Raw, optimized, and string-indexed versions of the dataset can be found in the l
 
 https://drive.google.com/drive/folders/1I3dyU3Kv7P9blAAAqPvPLdqst_otkoNB?usp=sharing
 
-## Distribution of the File Sizes:
+### Distribution of the File Sizes:
 ![AllMaterialFileSizeDistribution](https://github.com/user-attachments/assets/a8508093-7882-4fb0-8a7d-dd90ef1bd867)
 
 ---
