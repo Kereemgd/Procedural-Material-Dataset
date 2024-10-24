@@ -78,11 +78,9 @@ The dataset I used consists of 995 materials, each under 10KB in size, with a ma
 
 -Hyperparameters
 
-Batch Size : 2
-
-Epochs : 4
-
-Lr Multiplier : 1-e4
+-Batch Size : 2
+-Epochs : 4
+-Lr Multiplier : 1-e4
 
 ![c0b696c7-3741-43ff-baf6-64b30f5f25ea](https://github.com/user-attachments/assets/1be27a4b-0838-4c87-adb4-fb7f6b09c09d)
 
