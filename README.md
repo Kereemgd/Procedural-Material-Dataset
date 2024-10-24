@@ -96,9 +96,5 @@ The dataset I used consists of 995 materials, each under 10KB in size, with a ma
 |----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
 | <img src="https://github.com/user-attachments/assets/9f991df6-8009-407a-888e-ff9cf4211047" alt="Rough Wood" width="150"/> | <img src="https://github.com/user-attachments/assets/bade204c-f409-4128-9e8a-8566fe9056d3" alt="Procedural Blood" width="150"/> | <img src="https://github.com/user-attachments/assets/0fef09c4-b4f1-4f9f-842c-da3cbbef76fa" alt="Stone" width="150"/> | <img src="https://github.com/user-attachments/assets/4d44498c-a493-4fc7-8fa0-89d7092d07e6" alt="Abstract" width="150"/> |
 
-Hologram:
-
-![Hologram](https://github.com/user-attachments/assets/62f636f1-5d5d-4d85-aa7e-22ce47ecacf8)
-
 # Future Work
 - to be written
