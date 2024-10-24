@@ -1,7 +1,9 @@
 # Procedural Material Dataset
 Optimized Procedural Material Dataset for Blender And review of an AI based approach for generating them.
 
-<img src="https://github.com/user-attachments/assets/974a8843-6629-4408-8bd7-c2111fd4576f" alt="Chicken" width="300"/>
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/974a8843-6629-4408-8bd7-c2111fd4576f" alt="Chicken" width="300"/>
+</div>
 
 # What's Blender ?
 Blender is a powerful 3D software that is open-source and free to use. It is used for a wide range of tasks in 3D graphics
