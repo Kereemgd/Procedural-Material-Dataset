@@ -18,12 +18,9 @@ As you may gather from the description, this repository contains a highly optimi
 
 ![ezgif-3-134510a15e](https://github.com/user-attachments/assets/182f7032-9e25-4e1f-896f-31dc50f10bfd)
 
-I attempted to train language models to generate procedural materials, and while the results were promising, with excellent outputs occurring at a rate of 1 in 50, I ultimately decided against further development and deployment due to the required effort. Therefore, I am releasing the dataset I used, along with some insights gained from this five-month journey. Please, if you use the dataset, let me know.
+I attempted to train language models to generate procedural materials, and while the results were promising, with excellent outputs occurring at a rate of 1 in 50, I ultimately decided against further development and deployment due to the required effort.
 
 # Dataset
-Raw, optimized, and string-indexed versions of the dataset can be found in the link below:
-
-https://drive.google.com/drive/folders/1I3dyU3Kv7P9blAAAqPvPLdqst_otkoNB?usp=sharing
 
 <h3 align="center">Distribution of the File Sizes:</h3>
 <div align="center">
